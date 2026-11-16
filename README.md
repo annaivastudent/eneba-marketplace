@@ -8,6 +8,29 @@ This project was developed as a full-stack web application using React, TypeScri
 
 The application provides a marketplace experience with product browsing, search, filtering, seller offers, user authentication, shopping cart functionality, checkout, and order history.
 
+## Screenshots
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Product Details
+![Product Details](screenshots/product-details.png)
+
+### Shopping Cart
+![Shopping Cart](screenshots/shopping-cart.png)
+
+### Checkout
+![Checkout](screenshots/checkout.png)
+
+### Login
+![Login](screenshots/login.png)
+
+### Registration
+![Registration](screenshots/register.png)
+
+### Order History
+![Order History](screenshots/order-history.png)
+
 ## Features
 
 ### Product Catalog
@@ -82,6 +105,14 @@ eneba-marketplace/
 │           └── products/
 ├── public/
 │   └── images/
+├── screenshots/
+│   ├── homepage.png
+│   ├── product-details.png
+│   ├── shopping-cart.png
+│   ├── checkout.png
+│   ├── login.png
+│   ├── register.png
+│   └── order-history.png
 ├── src/
 │   ├── components/
 │   │   └── layout/
@@ -109,12 +140,12 @@ Make sure you have installed:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/eneba-marketplace.git
+cd eneba-marketplace
 ```
 
 ### 2. Install frontend dependencies
 
 ```bash
-cd eneba-marketplace
 npm install
 ```
 
@@ -131,7 +162,7 @@ The backend API will be available at:
 
 `http://localhost:8000`
 
-The SQLite database is created automatically when the database connection is initialized. Run the database table creation scripts if your database is empty.
+The SQLite database file is created automatically when the database connection is initialized. If the database is empty, run the database table creation scripts.
 
 ### 4. Start the frontend
 

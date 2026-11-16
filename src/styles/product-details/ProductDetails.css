@@ -1,0 +1,269 @@
+
+.product-details {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+  color: #ffffff;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #b9a5d0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #ffffff;
+}
+
+.product-overview {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  padding: 30px;
+  background: #21182e;
+  border-radius: 16px;
+}
+
+.product-details-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.product-details-image img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.product-details-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.product-details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-details-meta span {
+  padding: 7px 12px;
+  background: #38294b;
+  color: #d7c6e9;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+.product-details-info h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.product-region {
+  margin: 0;
+  color: #b9a5d0;
+}
+
+.product-discount {
+  padding: 7px 12px;
+  background: #16a36a;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.product-price-details {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.product-price-details del {
+  color: #9b91a5;
+  font-size: 18px;
+}
+
+.product-price-details strong {
+  font-size: 30px;
+}
+
+.product-note {
+  margin: 0;
+  color: #9b91a5;
+  font-size: 14px;
+}
+
+.product-add-button {
+  width: 100%;
+  max-width: 300px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 9px;
+  background: #7b2cff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.product-add-button:hover {
+  background: #6820df;
+}
+
+.seller-offers {
+  margin-top: 32px;
+  padding: 24px;
+  background: #21182e;
+  border-radius: 16px;
+}
+
+.seller-offers h2 {
+  margin-top: 0;
+}
+
+.seller-offers p {
+  color: #aaa0b7;
+}
+
+.product-loading {
+  padding: 40px;
+  color: #ffffff;
+}
+@media (max-width: 1000px) {
+  .product-details {
+    padding: 25px 20px 45px;
+  }
+
+  .product-overview {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 24px;
+  }
+
+  .product-details-image img {
+    height: 320px;
+  }
+
+  .product-details-info h1 {
+    font-size: 27px;
+  }
+
+  .product-price-details strong {
+    font-size: 26px;
+  }
+}
+@media (max-width: 750px) {
+  .product-details {
+    padding: 20px 16px 35px;
+  }
+
+  .product-overview {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 20px;
+  }
+
+  .product-details-image img {
+    height: 300px;
+  }
+
+  .product-details-info h1 {
+    font-size: 24px;
+  }
+
+  .product-details-meta {
+    gap: 6px;
+  }
+
+  .product-details-price strong {
+    font-size: 25px;
+  }
+
+  .product-add-button {
+    max-width: 100%;
+  }
+
+  .seller-offers {
+    padding: 20px;
+  }
+}
+
+.seller-offers {
+  margin-top: 40px;
+  padding: 24px;
+  background: #21182d;
+  border-radius: 12px;
+}
+
+.seller-offers h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.seller-offer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #40354d;
+}
+
+.seller-offer:last-child {
+  border-bottom: none;
+}
+
+.seller-offer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #ffffff;
+}
+
+.seller-offer-info span {
+  color: #c5a5ff;
+}
+
+.seller-offer-info small {
+  color: #aaa0b5;
+}
+
+.seller-offer-price {
+  color: #ffffff;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.seller-offer-button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #a970ff;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.seller-offer-button:hover {
+  background: #9250f0;
+}
+
+@media (max-width: 600px) {
+  .seller-offer {
+    flex-wrap: wrap;
+  }
+
+  .seller-offer-button {
+    width: 100%;
+  }
+}

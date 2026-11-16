@@ -1,0 +1,92 @@
+.orders-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 24px;
+  color: white;
+}
+
+.order-card {
+  background: #211a2b;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #40364c;
+  padding-bottom: 16px;
+}
+
+.order-header p {
+  color: #aaa;
+}
+
+.order-header span {
+  color: #7ee0a0;
+  text-transform: capitalize;
+}
+
+.order-product {
+  padding: 16px 0;
+  border-bottom: 1px solid #40364c;
+}
+
+.order-product h3 {
+  margin-top: 0;
+}
+
+.order-product code {
+  display: inline-block;
+  margin-top: 8px;
+  color: #a8e6b9;
+  overflow-wrap: anywhere;
+}
+
+.order-total {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.empty-orders,
+.orders-message,
+.orders-error {
+  padding: 30px;
+}
+
+.empty-orders a {
+  color: #c6a5ff;
+}
+
+.orders-error {
+  color: #ff6868;
+}
+.header-orders-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.header-orders-link:hover {
+  color: #a970ff;
+}
+.order-seller {
+  color: #a78bfa;
+  font-size: 14px;
+  margin: 6px 0;
+}
+@media (max-width: 600px) {
+  .orders-page {
+    padding: 0 14px;
+  }
+
+  .order-card {
+    padding: 16px;
+  }
+}

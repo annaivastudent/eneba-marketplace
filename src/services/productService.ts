@@ -1,7 +1,7 @@
 
 import type { Product } from '../types/Product';
 
-const API_URL = 'http://localhost:8000/api/home';
+const API_URL = 'https://eneba-marketplace.freedev.app/public/api/home';
 
 interface ApiResponse<T> {
   data: T;

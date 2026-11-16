@@ -2,6 +2,14 @@
 
 A digital games marketplace inspired by [Eneba](https://www.eneba.com/), where users can explore games, compare seller offers, add products to their cart, and complete test purchases with simulated digital key delivery.
 
+## Live Demo
+
+[Visit Eneba Marketplace](https://eneba-marketplace.freedev.app/)
+
+## GitHub Repository
+
+[View Source Code](https://github.com/annaivastudent/eneba-marketplace)
+
 ## About the Project
 
 This project was developed as a full-stack web application using React, TypeScript, PHP, and SQLite.
@@ -106,16 +114,8 @@ eneba-marketplace/
 ├── public/
 │   └── images/
 ├── screenshots/
-│   ├── homepage.png
-│   ├── product-details.png
-│   ├── shopping-cart.png
-│   ├── checkout.png
-│   ├── login.png
-│   ├── register.png
-│   └── order-history.png
 ├── src/
 │   ├── components/
-│   │   └── layout/
 │   ├── services/
 │   ├── styles/
 │   ├── types/
@@ -133,13 +133,13 @@ eneba-marketplace/
 Make sure you have installed:
 
 - Node.js and npm
-- PHP 8.4 or compatible version with PDO SQLite enabled
+- PHP 8.4 or a compatible version with PDO SQLite enabled
 - Git
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/eneba-marketplace.git
+git clone https://github.com/annaivastudent/eneba-marketplace.git
 cd eneba-marketplace
 ```
 

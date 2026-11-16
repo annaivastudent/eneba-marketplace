@@ -1,4 +1,6 @@
+
 import type { CartItem } from "../components/layout/cart/CartItem";
+import API_BASE_URL from "./apiConfig";
 
 interface OrderResponse {
   message?: string;
@@ -16,7 +18,7 @@ export async function createOrder(
   cartItems: CartItem[]
 ): Promise<OrderResponse> {
   const response = await fetch(
-    "http://localhost:8000/api/orders/checkout.php",
+    `${API_BASE_URL}/orders/checkout.php`,
     {
       method: "POST",
       headers: {
@@ -60,7 +62,7 @@ export interface Order {
 
 export async function getOrderHistory(): Promise<Order[]> {
   const response = await fetch(
-    "http://localhost:8000/api/orders/history.php",
+    `${API_BASE_URL}/orders/history.php`,
     {
       credentials: "include",
     }

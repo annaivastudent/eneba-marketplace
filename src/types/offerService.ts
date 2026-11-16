@@ -1,11 +1,12 @@
 
 import type { Offer } from "../types/Offer";
+import API_BASE_URL from "../services/apiConfig";
 
 interface ApiResponse<T> {
   data: T;
 }
 
-const API_URL = "http://localhost:8000/api/products";
+const API_URL = `${API_BASE_URL}/products`;
 
 export async function getProductOffers(
   productId: number

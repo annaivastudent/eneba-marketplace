@@ -1,30 +1,46 @@
 
+import API_BASE_URL from "./apiConfig";
+
 export interface RegisterData {
     name: string;
     email: string;
     password: string;
 }
 
+export interface AuthUser {
+    id: number;
+    name: string;
+    email: string;
+}
+
 export interface RegisterResponse {
     message?: string;
     error?: string;
-    user?: {
-        id: number;
-        name: string;
-        email: string;
-    };
+    user?: AuthUser;
+}
+
+export interface LoginData {
+    email: string;
+    password: string;
+}
+
+export interface LoginResponse {
+    message?: string;
+    error?: string;
+    user?: AuthUser;
 }
 
 export async function registerUser(
     data: RegisterData
 ): Promise<RegisterResponse> {
     const response = await fetch(
-        "http://localhost:8000/api/auth/register.php",
+        `${API_BASE_URL}/auth/register.php`,
         {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
+            credentials: "include",
             body: JSON.stringify(data),
         }
     );
@@ -37,28 +53,12 @@ export async function registerUser(
 
     return result;
 }
-export interface LoginData {
-    email: string;
-    password: string;
-}
-
-export interface AuthUser {
-    id: number;
-    name: string;
-    email: string;
-}
-
-export interface LoginResponse {
-    message?: string;
-    error?: string;
-    user?: AuthUser;
-}
 
 export async function loginUser(
     data: LoginData
 ): Promise<LoginResponse> {
     const response = await fetch(
-        "http://localhost:8000/api/auth/login.php",
+        `${API_BASE_URL}/auth/login.php`,
         {
             method: "POST",
             headers: {
@@ -80,7 +80,7 @@ export async function loginUser(
 
 export async function getCurrentUser(): Promise<AuthUser | null> {
     const response = await fetch(
-        "http://localhost:8000/api/auth/me.php",
+        `${API_BASE_URL}/auth/me.php`,
         {
             credentials: "include",
         }
@@ -97,7 +97,7 @@ export async function getCurrentUser(): Promise<AuthUser | null> {
 
 export async function logoutUser(): Promise<void> {
     const response = await fetch(
-        "http://localhost:8000/api/auth/logout.php",
+        `${API_BASE_URL}/auth/logout.php`,
         {
             method: "POST",
             credentials: "include",

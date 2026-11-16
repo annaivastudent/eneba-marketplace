@@ -1,75 +1,188 @@
-# React + TypeScript + Vite
+# Eneba Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A digital games marketplace inspired by [Eneba](https://www.eneba.com/), where users can explore games, compare seller offers, add products to their cart, and complete test purchases with simulated digital key delivery.
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was developed as a full-stack web application using React, TypeScript, PHP, and SQLite.
 
-## React Compiler
+The application provides a marketplace experience with product browsing, search, filtering, seller offers, user authentication, shopping cart functionality, checkout, and order history.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### Product Catalog
+- Browse available games.
+- Search for products by name.
+- Filter products by platform, region, and price.
+- Sort products.
+- View product details, prices, and discounts.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Seller Offers
+- Compare offers from multiple sellers.
+- View seller ratings and available stock.
+- Add a specific seller's offer to the shopping cart.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Shopping Cart
+- Add and remove products.
+- Manage products from different sellers.
+- View quantities and total prices.
+- Preserve cart data using local storage.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### User Authentication
+- User registration and login.
+- Session-based authentication.
+- Logout functionality.
+- Protected checkout and order history pages.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Checkout and Orders
+- Complete a simulated test payment.
+- Generate digital keys for purchased products.
+- Save orders in the database.
+- View previous orders and order details.
 
+## Technologies Used
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- React Router
+- CSS3
+- HTML5
+
+### Backend
+- PHP
+- REST API
+- PDO
+- SQLite
+
+### Development Tools
+- Git
+- GitHub
+- npm
+- Visual Studio Code
+
+## Project Structure
+
+```text
+eneba-marketplace/
+├── backend/
+│   ├── config/
+│   │   └── database.php
+│   ├── database/
+│   │   ├── create-users-table.php
+│   │   ├── create-orders-tables.php
+│   │   ├── create-offers-tables.php
+│   │   └── add-seller-to-order-items.php
+│   └── public/
+│       └── api/
+│           ├── auth/
+│           ├── home/
+│           ├── orders/
+│           └── products/
+├── public/
+│   └── images/
+├── src/
+│   ├── components/
+│   │   └── layout/
+│   ├── services/
+│   ├── styles/
+│   ├── types/
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── package.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Make sure you have installed:
 
+- Node.js and npm
+- PHP 8.4 or compatible version with PDO SQLite enabled
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/eneba-marketplace.git
 ```
+
+### 2. Install frontend dependencies
+
+```bash
+cd eneba-marketplace
+npm install
+```
+
+### 3. Start the PHP backend
+
+Open a terminal in the project root:
+
+```bash
+cd backend
+php -S localhost:8000 -t public
+```
+
+The backend API will be available at:
+
+`http://localhost:8000`
+
+The SQLite database is created automatically when the database connection is initialized. Run the database table creation scripts if your database is empty.
+
+### 4. Start the frontend
+
+Open another terminal in the project root:
+
+```bash
+npm run dev
+```
+
+The frontend will be available at:
+
+`http://localhost:5173`
+
+## Production Build
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## API Overview
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/home/best-sellers.php` | GET | Retrieves best-selling products |
+| `/api/products/offers.php` | GET | Retrieves available seller offers |
+| `/api/auth/register.php` | POST | Registers a new user |
+| `/api/auth/login.php` | POST | Authenticates a user |
+| `/api/auth/me.php` | GET | Retrieves the current user |
+| `/api/auth/logout.php` | POST | Logs out the current user |
+| `/api/orders/checkout.php` | POST | Processes a test checkout |
+| `/api/orders/history.php` | GET | Retrieves order history |
+
+## Important Notes
+
+- Payments are simulated for demonstration purposes. No real transactions are processed.
+- Digital keys are generated for testing purposes.
+- The application uses SQLite for data persistence.
+- This project is an educational marketplace application and is not affiliated with Eneba.
+
+## Author
+
+Developed as a full-stack web development project.
+
+## License
+
+This project is intended for educational and demonstration purposes.
